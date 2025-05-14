@@ -117,5 +117,5 @@ pip install -r requirements.txt
 
 Developed by **Ajayan Saroj**. Feel free to reach out for collaborations or queries.
 
-LinkedIn: \[Your LinkedIn URL]
-Email: \[Your Email Address]
+LinkedIn: \[https://www.linkedin.com/in/ajayan-saroj-7b0200133/]
+Email: \[ajayansaroj@gmail.com]
