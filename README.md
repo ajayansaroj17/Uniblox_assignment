@@ -1,121 +1,36 @@
-# Uniblox_assignment :Assignmment for uniblox assesment
+# Assignment
 
-# Employee Insurance Enrollment Prediction
+You are designing an ecommerce store. Clients can add items to their cart and checkout to successfully place an order. Every *n*th order gets a coupon code for 10% discount and can apply to their cart. 
 
-This project is designed to predict whether an employee will opt-in for a new voluntary insurance product based on their demographic and employment-related data. It consists of a machine learning pipeline for data preprocessing, model training, and deployment using a Streamlit web application.
+We would like you to design and implement APIs for adding items to cart and checkout functionality. The checkout API would validate if the discount code is valid before giving the discount. 
 
-## 📌 **Project Structure**
+Building a UI that showcases the functionality is a stretch goal. If you are primarily a backend engineer, you can also submit postman or REST client or equivalent.
 
-```
-project_folder/
-│
-├── employee_data.csv                 # Employee demographic and employment data
-├── data_preprocessing.py             # Data preprocessing pipeline
-├── train_model.py                    # Model training script
-├── predict.py                        # Prediction script
-├── employee_enrollment_model.pkl     # Trained model
-├── app.py                            # Streamlit application
-└── README.md                         # Project documentation
-```
+The store also has two admin API's:
+1. Generate a discount code if the condition above is satisfied.
+2. Lists count of items purchased, total purchase amount, list of discount codes and total discount amount. 
 
-## 🚀 **Modules Explanation**
+You can build this with a technology stack that you are comfortable with. You would push the code to your github repo and share the link once its complete. We would like to see your commits that show progression and thought process as to how you are completing the exercise. 
 
-### 1️⃣ **data\_preprocessing.py**
+Things that you will be evaluated on:
 
-This module handles the following:
+1.	Functional code
+2.	Code quality
+3.	UI in a framework of your choice
+4.	Code comments, readme docs
+5.	Unit tests
 
-* Loads the employee data from a CSV file
-* Splits the data into training and test sets
-* Applies transformations:
+Assumptions you can make:
+1.	The API’s don’t need a backend store. It can be an in-memory store.
 
-  * Standard scaling for numerical features
-  * One-hot encoding for categorical features
 
-### 2️⃣ **train\_model.py**
+## FAQ:
+**Q**: Can a discount code be used multiple times?
 
-This module performs:
+**A**: Discount code can be requested by every user, but is made available for every nth order only. The discount code can be used only once before the next one becomes available on the next nth order.
 
-* Model training using RandomForestClassifier
-* Hyperparameter tuning using GridSearchCV
-* Saves the trained model as `employee_enrollment_model.pkl`
+**Q**: Does the discount code apply to one item?
 
-### 3️⃣ **predict.py**
+**A**: Discount code applies to the entire order.
 
-This module is responsible for:
-
-* Loading the trained model
-* Accepting a sample input for prediction
-* Returning the enrollment prediction (0 for No, 1 for Yes)
-
-### 4️⃣ **app.py**
-
-Streamlit application that provides:
-
-* An interactive UI for user input
-* Real-time prediction of employee enrollment
-* Displays the prediction result interactively
-
----
-
-## ⚙️ **Model Training and Prediction**
-
-1. Run `train_model.py` to train the model:
-
-```bash
-python train_model.py
-```
-
-2. Use `predict.py` for testing a single input:
-
-```bash
-python predict.py
-```
-
----
-
-## 🌐 **Streamlit Application Usage**
-
-To launch the Streamlit app:
-
-```bash
-streamlit run app.py
-```
-
-The app will open in your browser at `http://localhost:8501`, where you can:
-
-* Enter employee demographic and employment details
-* Get real-time predictions for insurance enrollment
-
----
-
-## 📦 **Dependencies and Setup**
-
-Install dependencies:
-
-```bash
-pip install -r requirements.txt
-```
-
-### **requirements.txt** should include:
-
-* pandas
-* scikit-learn
-* joblib
-* streamlit
-
----
-
-## 🔄 **Future Enhancements**
-
-* Add feature importance visualization to the Streamlit app
-* Include history tracking for predictions
-* Improve hyperparameter tuning with Bayesian Optimization
-
----
-
-## 📞 **Contact Information**
-
-Developed by **Ajayan Saroj**. Feel free to reach out for collaborations or queries.
-
-LinkedIn: https://www.linkedin.com/in/ajayan-saroj-7b0200133/
-Email: ajayansaroj@gmail.com
+All the best!
