@@ -82,6 +82,7 @@ Feel free to fork this repository, create issues, or submit pull requests for im
 ## 📝 **Author**
 
 **Ajayan Saroj**
+ajayansaroj@gmail.com
 
 For any queries, feel free to reach out!
 
