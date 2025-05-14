@@ -1,36 +1,88 @@
-# Assignment
+# Employee Insurance Enrollment Prediction
 
-You are designing an ecommerce store. Clients can add items to their cart and checkout to successfully place an order. Every *n*th order gets a coupon code for 10% discount and can apply to their cart. 
+This project aims to predict whether an employee will opt-in to a voluntary insurance product based on their demographic and employment-related data using **XGBoost**.
 
-We would like you to design and implement APIs for adding items to cart and checkout functionality. The checkout API would validate if the discount code is valid before giving the discount. 
+---
 
-Building a UI that showcases the functionality is a stretch goal. If you are primarily a backend engineer, you can also submit postman or REST client or equivalent.
+## 📁 **Project Structure**
 
-The store also has two admin API's:
-1. Generate a discount code if the condition above is satisfied.
-2. Lists count of items purchased, total purchase amount, list of discount codes and total discount amount. 
+```
+project_folder/
+│
+├── employee_data.csv                 # Dataset for training and evaluation
+├── data_preprocessing.py             # Data loading and preprocessing logic
+├── train_model.py                    # Training logic using XGBoost
+├── predict.py                        # Prediction logic
+├── xgb_employee_enrollment_model.pkl     # Trained model (generated after training)
+└── README.md                         # Project documentation (You are here)
+```
 
-You can build this with a technology stack that you are comfortable with. You would push the code to your github repo and share the link once its complete. We would like to see your commits that show progression and thought process as to how you are completing the exercise. 
+---
 
-Things that you will be evaluated on:
+## ⚙️ **Modules Overview**
 
-1.	Functional code
-2.	Code quality
-3.	UI in a framework of your choice
-4.	Code comments, readme docs
-5.	Unit tests
+### 1️⃣ **data\_preprocessing.py**
 
-Assumptions you can make:
-1.	The API’s don’t need a backend store. It can be an in-memory store.
+* Loads the dataset.
+* Splits the data into **training** and **testing** sets.
+* Identifies categorical and numerical features.
+* Applies preprocessing steps:
 
+  * Numerical data → Standard Scaling
+  * Categorical data → One-Hot Encoding
 
-## FAQ:
-**Q**: Can a discount code be used multiple times?
+### 2️⃣ **train\_model.py**
 
-**A**: Discount code can be requested by every user, but is made available for every nth order only. The discount code can be used only once before the next one becomes available on the next nth order.
+* Imports preprocessed data.
+* Trains an **XGBoost Classifier** with default settings.
+* Evaluates using:
 
-**Q**: Does the discount code apply to one item?
+  * **Accuracy Score**
+  * **ROC AUC Score**
+  * **Classification Report**
+  * **Confusion Matrix**
+* Saves the trained model as `xgb_employee_enrollment_model.pkl`.
 
-**A**: Discount code applies to the entire order.
+### 3️⃣ **predict.py**
 
-All the best!
+* Loads the saved model.
+* Accepts user input and processes it using the trained pipeline.
+* Returns the **prediction**
+
+---
+
+## 🚀 **How to Run the Application**
+
+1️⃣ **Install Dependencies**
+
+```bash
+pip install -r requirements.txt
+```
+
+2️⃣ **Train the Model**
+
+```bash
+python train_model.py
+```
+
+## 📊 **Evaluation Metrics**
+
+* **Accuracy Score**: Measures the overall correctness of the model.
+* **ROC AUC Score**: Evaluates the model's capability to distinguish between classes.
+* **Classification Report**: Detailed precision, recall, and F1-score.
+* **Confusion Matrix**: Visualization of prediction vs. actual labels.
+---
+
+## 🤝 **Contributions**
+
+Feel free to fork this repository, create issues, or submit pull requests for improvements!
+
+---
+
+## 📝 **Author**
+
+**Ajayan Saroj**
+
+For any queries, feel free to reach out!
+
+---
